@@ -1,7 +1,7 @@
 from django.db import models
 
-
 # Categoria de los proyectos
+
 
 class ProyectoCategoria(models.Model):
     nombre = models.CharField(max_length=100, unique=True)
@@ -25,9 +25,9 @@ class Proyecto(models.Model):
         max_length=250, null=True, blank=True, verbose_name="descripción")
     opciones = (('en_proceso', 'En proceso'), ('finalizado', 'Finalizado'))
     estado = models.CharField(max_length=100, choices=opciones)
-    # proyectista
-    # colaboradores
-    # imagen
+    # proyectista =
+    # colaboradores =
+    # ubicacion =
     # imagen = models.ImageField(upload_to="imagenes", blank=True, null=True)
 
     def __str__(self):
