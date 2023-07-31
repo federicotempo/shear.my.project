@@ -5,16 +5,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
                 <li class="nav-item"><a class="nav-link {% if request.path == "/" %} active {% endif %}" href="{% url 'Home:home' %}">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'proyectos:proyectocategoria_list' %}">Proyectos</a></li>
                 {% if user.is_authenticated %}
-                <li class="nav-item"><a class="nav-link text-bg-info"> {{user.username}} </a></li>
-                <li class="nav-item"><a class="nav-link text-info" href="{% url 'Home:logout' %}">Logout</a></li>
+                    <li class="nav-item"><a class="nav-link text-bg-info"> {{user.username}} </a></li>
+                    <li class="nav-item"><a class="nav-link text-info" href="{% url 'Home:logout' %}">Logout</a></li>
                 {% else %}
-                <li class="nav-item"><a class="nav-link" href="projects.html">Proyectos</a></li>
-                <li class="nav-item"><a class="nav-link" href="resume.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://wa.me//3364297670">Contacto</a></li>
-                <li class="nav-item"><a class="nav-link text-info" href="{% url 'Home:login' %}">Login</a></li>
-                
-
+                    <li class="nav-item"><a class="nav-link" href="{% url 'Home:about' %}">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://wa.me//3364297670">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link text-info" href="{% url 'Home:login' %}">Login</a></li>
                 {% endif %}
             </ul>
         </div>

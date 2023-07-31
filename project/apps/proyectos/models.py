@@ -23,7 +23,7 @@ class Proyecto(models.Model):
     nombre = models.CharField(max_length=150)
     descripcion = models.CharField(
         max_length=250, null=True, blank=True, verbose_name="descripción")
-    opciones = (('en_proceso', 'En proceso'), ('finalizado', 'Finalizado'))
+    opciones = (('En proceso', 'En proceso'), ('Finalizado', 'Finalizado'))
     estado = models.CharField(max_length=100, choices=opciones)
     # proyectista =
     # colaboradores =

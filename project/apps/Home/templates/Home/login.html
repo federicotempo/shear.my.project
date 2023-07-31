@@ -1,9 +1,13 @@
+{% extends 'Home/base.html' %}
 
-<form action="" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <div class="d-grid gap-3 ">
-        <button type="submit" class="btn btn-success ">Iniciar sesión </button>
-    </div>
-
-</form>
+{% block BASE_CONTENIDO %}
+    <div class="text-center ">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="d-grid gap-3 ">
+                <button type="submit" class="btn btn-success ">Iniciar sesión </button>
+            </div>
+        </div>
+    </form>
+{% endblock BASE_CONTENIDO %}

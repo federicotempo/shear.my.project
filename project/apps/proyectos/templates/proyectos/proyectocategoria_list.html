@@ -1,0 +1,42 @@
+{% extends 'proyectos/base.html' %}
+
+{% block TITULO_BASE %}
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Categorias de Proyectos</span></h1>
+    </div>
+
+    <div>
+        <h2 class="text-center fs-3 fw-light text-muted ">Actualmente en Share.Your.Project:</h2>
+    </div>
+
+{% endblock TITULO_BASE %}
+
+{% block CONTENIDO %}
+
+    {%if object_list %}
+
+        {% for object in object_list %}
+
+          
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h2 class="text-primary fw-bolder mb-0">{{object.nombre}}</h2>
+
+
+                </div>
+
+                <div class="card shadow border-0 rounded-4 mb-5">
+                    <div class="card-body p-5">
+                        {{object.descripcion}}
+                    </div>
+                </div>
+
+        {% endfor %}
+
+        <div class="text-center">
+            <a class="fs-3 fw-bolder " href="{% url 'proyectos:proyecto_list' %}">Ver proyectos</a>
+        </div>
+    {% endif %}
+
+{% endblock CONTENIDO %}
+
+

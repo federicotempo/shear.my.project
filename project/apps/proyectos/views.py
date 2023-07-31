@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from . import models
+from django.views.generic import CreateView, DeleteView, DetailView, ListView, UpdateView
 
-# Create your views here.
+
+class ProyectoCategoriaList(ListView):
+    model = models.ProyectoCategoria
+
+
+class ProyectoList(ListView):
+    model = models.Proyecto
