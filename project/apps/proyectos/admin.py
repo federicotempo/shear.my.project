@@ -15,7 +15,8 @@ class ProyectoCategoriaAdmin(admin.ModelAdmin):
 
 @admin.register(Proyecto)
 class ProyectoAdmin(admin.ModelAdmin):
-    list_display = ("nombre", "categoria_id", "descripcion")
-    list_filter = ("nombre", "categoria_id",)
-    search_fields = ("nombre", "categoria_id")
-    ordering = ("nombre", "categoria_id",)
+    list_display = ("nombre", "categoria_id",
+                    "autor_id", "estado", "descripcion")
+    list_filter = ("nombre", "categoria_id", "estado")
+    search_fields = ("nombre", "categoria_id", "estado")
+    ordering = ("nombre", "categoria_id", "estado")

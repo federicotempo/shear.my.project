@@ -25,7 +25,8 @@ class Proyecto(models.Model):
         max_length=250, null=True, blank=True, verbose_name="descripción")
     opciones = (('En proceso', 'En proceso'), ('Finalizado', 'Finalizado'))
     estado = models.CharField(max_length=100, choices=opciones)
-    # proyectista =
+    autor_id = models.ForeignKey(
+        "autores.Autor", on_delete=models.DO_NOTHING, null=True, verbose_name="Autor")
     # colaboradores =
     # ubicacion =
     # imagen = models.ImageField(upload_to="imagenes", blank=True, null=True)
