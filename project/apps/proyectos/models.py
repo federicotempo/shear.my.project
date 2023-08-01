@@ -29,7 +29,7 @@ class Proyecto(models.Model):
         "autores.Autor", on_delete=models.DO_NOTHING, null=True, verbose_name="Autor")
     # colaboradores =
     # ubicacion =
-    # imagen = models.ImageField(upload_to="imagenes", blank=True, null=True)
+    imagen = models.ImageField(upload_to="imagenes", blank=True, null=True)
 
     def __str__(self):
         return self.nombre
