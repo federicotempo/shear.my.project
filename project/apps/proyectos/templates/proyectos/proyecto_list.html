@@ -43,7 +43,7 @@
                                                     <li>Autor: {{object.autor_id}}</li>
                                                     <li>Descripción: {{object.descripcion}}</li>
                                                 </div>
-                                                <img class="img-fluid" src="{% static object.imagen %}" alt="..." />
+                                                <img class="img-fluid" src="{{object.imagen.url}}" alt="..." />
                                             </div>
                                         </div>
                                     </div>
