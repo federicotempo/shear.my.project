@@ -11,6 +11,14 @@ urlpatterns = [
          name="proyectocategoria_list"),
     path("proyecto/list/", views.ProyectoList.as_view(),
          name="proyecto_list"),
+    path("proyectocategoria/create/", views.ProyectoCategoriaCreate.as_view(),
+         name="proyectocategoria_create"),
+    path("proyecto/create/", views.ProyectoCreate.as_view(),
+         name="proyecto_create"),
+    path("proyectocategoria/delete/<int:pk>", views.ProyectoCategoriaDelete.as_view(),
+         name="proyectocategoria_delete"),
+    path("proyecto/delete/<int:pk>", views.ProyectoDelete.as_view(),
+         name="proyecto_delete"),
 
 ]
 
