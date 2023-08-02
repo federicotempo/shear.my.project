@@ -1,4 +1,7 @@
+from pyexpat import model
 from django.db import models
+from django.utils.safestring import mark_safe
+
 
 # Categoria de los proyectos
 
@@ -19,20 +22,24 @@ class ProyectoCategoria(models.Model):
 
 class Proyecto(models.Model):
     categoria_id = models.ForeignKey(
-        ProyectoCategoria, on_delete=models.DO_NOTHING, null=True, verbose_name="Categoría")
-    nombre = models.CharField(max_length=150)
+        ProyectoCategoria, on_delete=models.SET_NULL, null=True, verbose_name="Categoría")
+    nombre = models.CharField(max_length=150, unique=True)
     descripcion = models.CharField(
         max_length=250, null=True, blank=True, verbose_name="descripción")
     opciones = (('En proceso', 'En proceso'), ('Finalizado', 'Finalizado'))
     estado = models.CharField(max_length=100, choices=opciones)
     autor_id = models.ForeignKey(
-        "autores.Autor", on_delete=models.DO_NOTHING, null=True, verbose_name="Autor")
+        "autores.Autor", on_delete=models.SET_NULL, null=True, verbose_name="Autor")
     # colaboradores =
     # ubicacion =
-    imagen = models.ImageField(upload_to="imagenes", blank=True, null=True)
+    imagen = models.ImageField(
+        upload_to="imagenes", blank=True, null=True, default="default_6VfgP8H.png")
 
     def __str__(self):
         return self.nombre
+
+    def admin_photo(self):
+        return mark_safe('<img src="{}" width="100" />'.format(self.imagen.url))
 
     class Meta:
         verbose_name = "proyectos"

@@ -16,3 +16,9 @@ from . import models
 
 class AutorList(ListView):
     model = models.Autor
+
+# INDEX
+
+
+def index(request):
+    return render(request, "autores/index.html")

@@ -9,6 +9,8 @@ app_name = "autor"
 urlpatterns = [
     path("autor/list/", views.AutorList.as_view(),
          name="autor_list"),
+    path("autor/index/", views.index,
+         name="index"),
 
 ]
 

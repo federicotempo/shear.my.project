@@ -10,6 +10,7 @@ from django.views.generic import (
 
 from . import models
 from . import forms
+from django.shortcuts import render
 
 #! ProyectoCategoria
 # List
@@ -53,3 +54,8 @@ class ProyectoCreate(CreateView):
 class ProyectoDelete(DeleteView):
     model = models.Proyecto
     success_url = reverse_lazy("proyectos:proyecto_list")
+
+
+# INDEX
+def index(request):
+    return render(request, "proyectos/index.html")
