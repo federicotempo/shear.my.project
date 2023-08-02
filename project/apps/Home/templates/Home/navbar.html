@@ -6,11 +6,11 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
                 {% if user.is_authenticated %}
                     <li class="nav-item"><a class="nav-link {% if request.path == "/proyectos/index/" %} active {% endif %}" href="{% url 'proyectos:index' %}">Proyectos</a></li>
-                    <li class="nav-item"><a class="nav-link {% if request.path == "/autor/list/" %} active {% endif %}" href="{% url 'autor:index' %}">Autores</a></li>
+                    <li class="nav-item"><a class="nav-link {% if request.path == "/autor/index/" %} active {% endif %}" href="{% url 'autor:index' %}">Autores</a></li>
                     <li class="nav-item"><a class="nav-link text-bg-info"> {{user.username}} </a></li>
                     <li class="nav-item"><a class="nav-link text-info" href="{% url 'Home:logout' %}">Logout</a></li>
                 {% else %}
-                <li class="nav-item"><a class="nav-link {% if request.path == "/" %} active {% endif %}" href="{% url 'Home:home' %}">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link {% if request.path == "/" %} active {% endif %}" href="{% url 'Home:home' %}">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link {% if request.path == "/about/" %} active {% endif %}" href="{% url 'Home:about' %}">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://wa.me//3364297670" target="_blank">Contacto</a></li>
                     <li class="nav-item"><a class="nav-link text-info" href="{% url 'Home:login' %}">Login</a></li>

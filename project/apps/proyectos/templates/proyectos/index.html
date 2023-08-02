@@ -11,19 +11,19 @@
         <div class="text-center text-xxl-start">
             <h1 class="display-5 fw-bolder mb-5"><span class="text-gradient d-inline">Categoria de proyectos</span></h1>
             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="{% url 'Home:about' %}">Crear</a>
+                <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="{% url 'proyectos:proyectocategoria_create' %}">Crear</a>
                 <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="{% url 'proyectos:proyectocategoria_list' %}">Ver</a>
-                
+
             </div>
         </div>
-        <br>
+
         <br>
         <div class="text-center text-xxl-start">
             <h1 class="display-5 fw-bolder mb-5"><span class="text-gradient d-inline">Proyectos</span></h1>
             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="{% url 'Home:about' %}">Crear</a>
+                <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="{% url 'proyectos:proyecto_create' %}">Crear</a>
                 <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="{% url 'proyectos:proyecto_list' %}">Ver</a>
-                
+
             </div>
         </div>
     {% endblock INDEX_CONTENIDO %}

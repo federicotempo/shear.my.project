@@ -1,13 +1,13 @@
 {% extends 'Home/base.html' %}
 
 {% block BASE_CONTENIDO %}
-<div class="text-center text-xxl-start">
-<div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">Share &middot; Your &middot; Proyect</div></div>
-</div>
-<br>
+    <div class="text-center text-xxl-start">
+        <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">Share &middot; Your &middot; Proyect</div></div>
+    </div>
+    <br>
     <div class="text-center ">
         <form action="" method="post">
-            
+
             {% csrf_token %}
             {{ form.as_p }}
             <br>
