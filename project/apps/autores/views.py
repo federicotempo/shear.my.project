@@ -9,6 +9,7 @@ from django.views.generic import (
     UpdateView,
 )
 from . import models
+from . import forms
 
 #! Autor
 # List
@@ -22,3 +23,17 @@ class AutorList(ListView):
 
 def index(request):
     return render(request, "autores/index.html")
+
+
+# Create
+class AutorCreate(CreateView):
+    model = models.Autor
+    form_class = forms.AutorForm
+    success_url = reverse_lazy("autor:autor_list")
+
+# Delete
+
+
+class AutorDelete(DeleteView):
+    model = models.Autor
+    success_url = reverse_lazy("autor:autor_list")
