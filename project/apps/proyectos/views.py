@@ -56,6 +56,12 @@ class ProyectoDelete(DeleteView):
     success_url = reverse_lazy("proyectos:proyecto_list")
 
 
-# INDEX
-def index(request):
-    return render(request, "proyectos/index.html")
+# INDEX CATEGORIAS
+def index_categoria(request):
+    return render(request, "proyectos/index_categoria.html")
+
+# INDEX PROYECTOS
+
+
+def index_proyecto(request):
+    return render(request, "proyectos/index_proyecto.html")

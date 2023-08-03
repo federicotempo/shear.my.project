@@ -20,7 +20,10 @@ urlpatterns = [
          name="proyectocategoria_delete"),
     path("proyecto/delete/<int:pk>", views.ProyectoDelete.as_view(),
          name="proyecto_delete"),
-    path("proyectos/index/", views.index, name="index"),
+    path("proyectos/index_categoria/",
+         views.index_categoria, name="index_categoria"),
+    path("proyectos/index_proyecto/",
+         views.index_proyecto, name="index_proyecto"),
 
 ]
 
