@@ -24,6 +24,10 @@ urlpatterns = [
          views.index_categoria, name="index_categoria"),
     path("proyectos/index_proyecto/",
          views.index_proyecto, name="index_proyecto"),
+    path("proyecto/modificar/<id>/",
+         views.modificar_proyecto, name="proyecto_modificar"),
+    path("proyectocategoria/modificar/<id>/",
+         views.modificar_proyectocategoria, name="proyectocategoria_modificar"),
 
 ]
 

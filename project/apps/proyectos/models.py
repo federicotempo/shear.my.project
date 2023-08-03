@@ -1,7 +1,7 @@
-from pyexpat import model
 from django.db import models
 from django.utils.safestring import mark_safe
-
+from django_countries.fields import CountryField
+from django.utils import timezone
 
 # Categoria de los proyectos
 
@@ -30,8 +30,9 @@ class Proyecto(models.Model):
     estado = models.CharField(max_length=100, choices=opciones)
     autor_id = models.ForeignKey(
         "autores.Autor", on_delete=models.SET_NULL, null=True, verbose_name="Autor")
-    # colaboradores =
-    # ubicacion =
+    ubicacion = CountryField(verbose_name="Ubicación", null=True)
+    fecha_publicacion = models.DateTimeField(
+        default=timezone.now, editable=False, null=True, verbose_name="Fecha de publicación")
     imagen = models.ImageField(
         upload_to="imagenes", blank=True, null=True, default="default_6VfgP8H.png")
 

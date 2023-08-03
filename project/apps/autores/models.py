@@ -1,6 +1,6 @@
 from django.db import models
-from django.forms import CharField
-from django.contrib.auth.models import User
+from django_countries.fields import CountryField
+from django.utils import timezone
 
 # Usuario
 
@@ -12,6 +12,7 @@ class Autor(models.Model):
     email = models.EmailField(max_length=100)
     edad = models.PositiveIntegerField(null=True)
     telefono = models.PositiveIntegerField(null=True)
+    pais = CountryField(verbose_name="país", null=True)
     avatar = models.ImageField(upload_to="avatares", null=True)
 
     def __str__(self):

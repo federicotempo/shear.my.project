@@ -41,7 +41,7 @@
                                             <div class="mb-5">
                                                 <div class="d-flex align-items-center mb-4">
                                                     <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-5 me-3"><i class="bi bi-tools"></i></div>
-                                                    <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">{{object.nombre}} {{object.apellido}}</span> <a href="{% url 'autor:autor_delete' object.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                                                    <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">{{object.nombre}} {{object.apellido}}</span> <a href="{% url 'autor:autor_delete' object.id %}" class="btn btn-danger btn-sm">Eliminar</a> <a href="{% url 'autor:autor_modificar' object.id %}" class="btn btn-info btn-sm">Editar </a>
                                                     </h3>
                                                 </div>
                                                 <div class="row row-cols-1 row-cols-md-3 mb-4">
@@ -49,6 +49,9 @@
                                                 </div>
                                                 <div class="row row-cols-1 row-cols-md-3 mb-4">
                                                     <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center">{{object.profesion}}</div></div>
+                                                </div>
+                                                <div class="row row-cols-1 row-cols-md-3 mb-4">
+                                                    <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center">{{object.pais.name}}</div></div>
                                                 </div>
                                                 <div class="row row-cols-1 row-cols-md-3 mb-4">
                                                     <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center">{{object.edad}} años</div></div>

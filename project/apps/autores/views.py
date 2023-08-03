@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from ast import Delete
 from django.urls import reverse_lazy
 from django.views.generic import (
@@ -37,3 +37,22 @@ class AutorCreate(CreateView):
 class AutorDelete(DeleteView):
     model = models.Autor
     success_url = reverse_lazy("autor:autor_list")
+
+
+# Modificar
+
+def modificar_autor(request, id):
+    autor = get_object_or_404(models.Autor, id=id)
+    data = {
+        'form': forms.AutorForm(instance=autor)
+    }
+
+    if request.method == 'POST':
+        formulario = forms.AutorForm(
+            data=request.POST, instance=autor, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect(to="autor:autor_list")
+        data["form"] = formulario
+
+    return render(request, "autores/autor_modificar.html", data)

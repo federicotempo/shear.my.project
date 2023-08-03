@@ -2,7 +2,7 @@
 
 {% block TITLE %}
 
-    <title>Proyectos</title>
+    <title>Caegorías de Proyectos</title>
 {% endblock TITLE %}
 
 
@@ -20,7 +20,7 @@
 
         {% for object in object_list %}
             <div class="d-flex align-items-center justify-content-between mb-4">
-                <h2 class="text-primary fw-bolder mb-0">{{object.nombre}} <a href="{% url 'proyectos:proyectocategoria_delete' object.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                <h2 class="text-primary fw-bolder mb-0">{{object.nombre}} <a href="{% url 'proyectos:proyectocategoria_delete' object.id %}" class="btn btn-danger btn-sm">Eliminar</a> <a href="{% url 'proyectos:proyectocategoria_modificar' object.id %}" class="btn btn-info btn-sm">Editar </a>
                 </h2>
             </div>
 
