@@ -39,7 +39,7 @@
                                                 <div class="p-5">
                                                     <h2 class="fw-bolder"> {{object.nombre}} <a href="{% url 'proyectos:proyecto_delete' object.id %}" class="btn btn-danger btn-sm">Eliminar</a> <a href="{% url 'proyectos:proyecto_modificar' object.id %}" class="btn btn-info btn-sm">Editar </a>
                                                     </h2>
-                                                    <li>Categoría: {{object.categoria_id}}</li> 
+                                                    <li>Categoría: {{object.categoria_id}}</li>
                                                     <li>Estado: {{object.estado}}</li>
                                                     <li>Autor: {{object.autor_id}}</li>
                                                     <li>Ubicación: {{object.ubicacion.name}}</li>
