@@ -1,0 +1,21 @@
+{% extends 'proyectos/base.html' %}
+
+{% block TITLE %}
+    <title>Registro</title>
+
+{% endblock TITLE %}
+
+{% block CONTENIDO %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="d-grid gap-3  d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
+        <button type="submit" class="btn btn-success ">Registrar nuevo usuario</button>
+    </div>
+</form> 
+
+
+<br><br><br>
+
+{% endblock CONTENIDO %}

@@ -1,13 +1,30 @@
 {% extends 'Home/base.html' %}
 
+{% block BASE_TITULO %}
+    <title>Login</title>
+{% endblock BASE_TITULO %}
+
 {% block BASE_CONTENIDO %}
+    <div class="text-center text-xxl-start">
+        <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">Share &middot; Your &middot; Proyect</div></div>
+    </div>
+    <br>
     <div class="text-center ">
         <form action="" method="post">
+
             {% csrf_token %}
             {{ form.as_p }}
-            <div class="d-grid gap-3 ">
-                <button type="submit" class="btn btn-success ">Iniciar sesión </button>
+            <br>
+            <div class="d-grid gap-3  d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3 ">
+                <br>
+                <button type="submit" class="btn btn-success">Iniciar sesión </button>
             </div>
         </div>
     </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 {% endblock BASE_CONTENIDO %}

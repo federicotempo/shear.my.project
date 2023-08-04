@@ -37,13 +37,16 @@
                                         <div class="card-body p-0">
                                             <div class="d-flex align-items-center">
                                                 <div class="p-5">
-                                                    <h2 class="fw-bolder"> {{object.nombre}}</h2>
-                                                    <li>Categoría: {{object.categoria_id}}</li>
+                                                    <h2 class="fw-bolder"> {{object.nombre}} <a href="{% url 'proyectos:proyecto_delete' object.id %}" class="btn btn-danger btn-sm">Eliminar</a> <a href="{% url 'proyectos:proyecto_modificar' object.id %}" class="btn btn-info btn-sm">Editar </a>
+                                                    </h2>
+                                                    <li>Categoría: {{object.categoria_id}}</li> 
                                                     <li>Estado: {{object.estado}}</li>
                                                     <li>Autor: {{object.autor_id}}</li>
+                                                    <li>Ubicación: {{object.ubicacion.name}}</li>
+                                                    <li>Publicación: {{object.fecha_publicacion|date:"d/m/Y"}}</li>
                                                     <li>Descripción: {{object.descripcion}}</li>
                                                 </div>
-                                                <img class="img-fluid" src="https://dummyimage.com/300x400/343a40/6c757d" alt="..." />
+                                                <img  src="{{object.imagen.url}}" height="150" width="250" alt="..." />
                                             </div>
                                         </div>
                                     </div>

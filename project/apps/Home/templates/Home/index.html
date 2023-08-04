@@ -10,14 +10,31 @@
 
         <div class="text-center text-xxl-start">
             <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">Share &middot; Your &middot; Proyect</div></div>
+            {% if user.is_authenticated %}
+            <div class="fs-3 fw-light text-muted">Bienvenido</div>
+            <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">{{user.username}}</span></h1>
+            {% else %}
             <div class="fs-3 fw-light text-muted">Tu plataforma ideal para</div>
-            <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Compartir proyectos</span></h1>
+            <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Gestionar proyectos</span></h1>
+            {% endif %}
+
             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
+                {% if user.is_staff %}
+                <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="{% url 'admin:index' %}">Panel de administración</a>
+                <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="{% url 'Home:register' %}">Registrar nuevo usuario</a>
+                {% elif user.is_authenticated %}
+                {% else %}
                 <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="{% url 'Home:about' %}">About</a>
-                <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="{% url 'proyectos:proyectocategoria_list' %}">Proyectos</a>
+                <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="{% url 'Home:login' %}">Login</a>
+                {% endif %}
+
+                
             </div>
         </div>
-
+        <br>
+        <br>
+        <br>
+        <br>
     {% endblock INDEX_CONTENIDO %}
 
 {% endblock BASE_CONTENIDO %}
