@@ -8,3 +8,4 @@ class AutorAdmin(admin.ModelAdmin):
     list_filter = ("nombre", "apellido",)
     search_fields = ("nombre", "apellido", "email", "pais")
     ordering = ("nombre", "apellido", "pais")
+    readonly_fields = ("admin_photo",)

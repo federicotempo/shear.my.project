@@ -1,6 +1,6 @@
 from django.db import models
 from django_countries.fields import CountryField
-from django.utils import timezone
+from django.utils.safestring import mark_safe
 
 # Usuario
 
@@ -17,6 +17,9 @@ class Autor(models.Model):
 
     def __str__(self):
         return f"{self.nombre} {self.apellido}"
+
+    def admin_photo(self):
+        return mark_safe('<img src="{}" width="100" />'.format(self.avatar.url))
 
     class Meta:
         verbose_name = "Autores"

@@ -34,7 +34,7 @@ class Proyecto(models.Model):
     fecha_publicacion = models.DateTimeField(
         default=timezone.now, editable=False, null=True, verbose_name="Fecha de publicación")
     imagen = models.ImageField(
-        upload_to="imagenes", blank=True, null=True, default="default_6VfgP8H.png")
+        upload_to="imagenes", null=True)
 
     def __str__(self):
         return self.nombre
