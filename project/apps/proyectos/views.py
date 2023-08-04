@@ -65,6 +65,9 @@ class ProyectoCreate(CreateView):
     form_class = forms.ProyectoForm
     success_url = reverse_lazy("proyectos:proyecto_list")
 
+    def form_valid(self, form):
+        return super().form_valid(form)
+
 
 # Delete
 class ProyectoDelete(DeleteView):

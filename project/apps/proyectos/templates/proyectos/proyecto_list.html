@@ -46,7 +46,7 @@
                                                     <li>Publicación: {{object.fecha_publicacion|date:"d/m/Y"}}</li>
                                                     <li>Descripción: {{object.descripcion}}</li>
                                                 </div>
-                                                <img  src="{{object.imagen.url}}" height="150" width="250" alt="..." />
+                                                <img  src="{{ object.get_photo_url}}" height="150" width="250" alt="..." />
                                             </div>
                                         </div>
                                     </div>

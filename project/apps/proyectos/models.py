@@ -34,13 +34,20 @@ class Proyecto(models.Model):
     fecha_publicacion = models.DateTimeField(
         default=timezone.now, editable=False, null=True, verbose_name="Fecha de publicación")
     imagen = models.ImageField(
-        upload_to="imagenes", null=True)
+        upload_to="imagenes/", null=True, blank=True, default="channels4_profile.jpg")
 
     def __str__(self):
         return self.nombre
 
     def admin_photo(self):
         return mark_safe('<img src="{}" width="100" />'.format(self.imagen.url))
+
+    @property
+    def get_photo_url(self):
+        if self.imagen and hasattr(self.imagen, 'url'):
+            return self.imagen.url
+        else:
+            return "/media/imagenes/default.png"
 
     class Meta:
         verbose_name = "proyectos"

@@ -5,15 +5,15 @@
 {% endblock BASE_TITULO %}
 
 {% block BASE_CONTENIDO %}
-<br><br><br><br>
-<p class="fs-5 fst-italic text-center ">¿Está seguro de eliminar "{{ object }}"?</p>
+    <br><br><br><br>
+    <p class="fs-5 fst-italic text-center ">¿Está seguro de eliminar "{{ object }}"?</p>
 
-<form method="post">
-    {% csrf_token %}
-    <div class="text-center ">
-    <button type="submit" class="btn btn-danger ">Eliminar</button>
-    </div>
-</form>
-<br><br><br><br><br><br><br><br><br>
+    <form method="post">
+        {% csrf_token %}
+        <div class="text-center ">
+            <button type="submit" class="btn btn-danger ">Eliminar</button>
+        </div>
+    </form>
+    <br><br><br><br><br><br><br><br><br>
 
 {% endblock BASE_CONTENIDO %}

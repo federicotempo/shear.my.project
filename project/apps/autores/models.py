@@ -21,6 +21,13 @@ class Autor(models.Model):
     def admin_photo(self):
         return mark_safe('<img src="{}" width="100" />'.format(self.avatar.url))
 
+    @property
+    def get_photo_url(self):
+        if self.avatar and hasattr(self.avatar, 'url'):
+            return self.avatar.url
+        else:
+            return "/media/imagenes/default.png"
+
     class Meta:
         verbose_name = "Autores"
         verbose_name_plural = "Autores"
