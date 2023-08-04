@@ -22,3 +22,6 @@ Dentro de categorias, proyectos y autores uno puede crear, ver, modificar y elim
 
 Dentro del archivo requirements.txt uno puede ver cuales son las librerias utilizadas y a instalar para el proyecto.
 
+Video del proyecto:
+
+https://drive.google.com/drive/folders/1lFuF9O6POZDjfAxUJimQqWwd6n-u9yWv?usp=sharing
